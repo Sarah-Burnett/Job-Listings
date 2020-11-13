@@ -1,0 +1,21 @@
+.jobFilter {
+    grid-area: filter;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: flex-end; 
+    button {
+        @include button;
+        &:hover {
+            background: $primary-cyan;
+            color: $neutral-filter;
+        }   
+    }
+    @media (max-width: $tablet){
+        width: 100%;
+        &::before {
+            content: '';
+            width: 100%;
+            border-top: 1px solid $neutral-cyan;
+        }
+    }
+}

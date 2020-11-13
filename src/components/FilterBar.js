@@ -1,16 +1,16 @@
 import React from 'react'
 
-function FilterBar(props) {
+function FilterBar({ filterList, removeFilter, clearFilter }) {
     return (
         <div className="filterBar">
             <div className="filterContainer">
                 { 
-                props.filterList.map( item => {
-                return <button key={item}>{item}<span onClick={ (e) => props.removeFilter(item, e)}>X</span></button>
+                filterList.map( item => {
+                return <button key={item}>{item[1]}<span onClick={ (e) => removeFilter(item, e)}>X</span></button>
                 })
                 }
             </div>
-            <div className="filterClear" onClick={props.clearFilter}>Clear</div>
+            <div className="filterClear" onClick={clearFilter}>Clear</div>
         </div>
     )
 }

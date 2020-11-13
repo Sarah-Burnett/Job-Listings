@@ -1,10 +1,10 @@
 import React from 'react'
 import Job from './Job'
 
-function JobList(props) {
+function JobList({ jobList, addFilter }) {
     return (
-        props.jobList.map( (job) => {
-            return <Job job={job} key={job.id} addFilter={props.addFilter}/>
+        jobList.map( (job) => {
+            return <Job job={job} key={job.id} addFilter={addFilter}/>
         })
     )
 }

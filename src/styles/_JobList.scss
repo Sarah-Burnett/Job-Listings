@@ -1,0 +1,21 @@
+.job {
+    background: #FFF;
+    height: auto;
+    width: 80vw;
+    padding: 0 2vh;
+    margin: 50px auto;
+    box-shadow: 0 4px 4px $neutral-cyan;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 35px repeat(2, min-content);
+    grid-template-areas: "logo" "info" "filter";
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: $tablet) {
+        margin: 5vh auto;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: "logo logo info info info info filter filter filter filter";
+    }
+}

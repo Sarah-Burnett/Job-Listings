@@ -1,16 +1,24 @@
 import React from 'react'
 
-function Filter(props) {
-    const { role, level, languages, tools } = props.filter
-    const filterArr = [role, level, languages, tools]
+function Filter({ filter, addFilter }) {
+    let filterArr = [];
+    for (let item in filter) {
+        if (!Array.isArray(filter[item])) {
+            const arr = [item, filter[item]];
+            filterArr.push(arr);
+       } else {
+           for (let i = 0; i < filter[item].length; i++) {
+               const arr = [item, filter[item][i]];
+               filterArr.push(arr);
+           }
+       }
+   }
     return (
         <div className="jobFilter">
             {
             filterArr
-                .flat()
-                .filter( (value) => value )
-                .map( (value) => {
-                    return <button key={value} className="filterItem" onClick={ (e) => props.addFilter(value,e) }>{value}</button>
+                .map( (item) => {
+                    return <button key={item} className="filterItem" onClick={ (e) => addFilter(item,e) }>{item[1]}</button>
                 })
             }
         </div>

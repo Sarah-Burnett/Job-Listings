@@ -1,0 +1,36 @@
+.filterBar {
+    background: #FFF;
+    height: 10vh;
+    width: 80vw;
+    padding: 3vh;
+    margin: auto;
+    box-shadow: 0 4px 4px $neutral-cyan;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .filterClear {
+        color: $primary-cyan;
+        text-decoration: underline $primary-cyan solid;
+        font-size: small;
+        cursor: pointer;
+        &:hover {
+            font-weight: bold;
+        }
+    }
+    button {
+        @include button;
+        padding-right: 0;
+        span {
+            background: $primary-cyan;
+            color: #FFF;
+            margin-left: 1vh;
+            padding: 1vh;
+            border-radius: 5px;
+            font-weight: bold;
+            &:hover {
+                background: $neutral-dkcyan;
+            }
+        }
+    }
+}

@@ -3,6 +3,8 @@ $neutral-background: hsl(180, 52%, 96%);
 $neutral-filter: hsl(180, 31%, 95%);
 $neutral-cyan: hsl(180, 8%, 52%);
 $neutral-dkcyan: hsl(180, 14%, 20%);
+$desktop: 800px;
+$tablet: 500px;
 
 @mixin button {
     background: $neutral-filter;
@@ -15,6 +17,13 @@ $neutral-dkcyan: hsl(180, 14%, 20%);
     font-size: 12px;
     cursor: pointer;
 }
+
+@import 'Header';
+@import 'FilterBar';
+@import 'JobList';
+@import 'Logo';
+@import 'Job';
+@import 'Filter';
 
 * {
     margin: 0;
@@ -29,113 +38,11 @@ body {
     line-height: 1.5em;
 }
 
-.header {
-    height: 10vh;
-    width: 100vw;
-    background-image: url('../images/bg-header-mobile.svg');
-    background-color: $neutral-cyan;
-}
 
-.filterBar {
-    background: #FFF;
-    height: 10vh;
-    width: 80vw;
-    padding: 3vh;
-    margin: auto;
-    box-shadow: 0 4px 4px $neutral-cyan;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .filterClear {
-        color: $primary-cyan;
-        text-decoration: underline $primary-cyan solid;
-        font-size: small;
-        cursor: pointer;
-        &:hover {
-            font-weight: bold;
-        }
-    }
-    button {
-        @include button;
-        padding-right: 0;
-        span {
-            background: $primary-cyan;
-            color: #FFF;
-            margin-left: 1vh;
-            padding: 1vh;
-            border-radius: 5px;
-            font-weight: bold;
-            &:hover {
-                background: $neutral-dkcyan;
-            }
-        }
-    }
 
-}
 
-.job {
-    background: #FFF;
-    width: 80vw;
-    padding: 0 2vh;
-    margin: 5vh auto;
-    box-shadow: 0 4px 4px $neutral-cyan;
-    border-radius: 5px;
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-areas: "logo info info info info filter filter filter filter filter";
-    grid-template-rows: auto;
-    align-items: center;
-    justify-content: space-between;
-}
 
-.jobLogo {
-    grid-area: logo
-}
 
-.jobInfo {
-    grid-area: info;
-    padding: 1vw;
-    .jobInfo1 {
-        color: $primary-cyan;
-        font-weight: bold;
-        font-size: small;
-        .new {
-            background: $primary-cyan;
-            color: white;
-            border-radius: 15px;
-            padding: 4px 8px;
-            font-size: x-small;
-        }
-        
-        .featured {
-            @extend .new;
-            background: $neutral-dkcyan;
-        }
-    }
 
-    .jobInfo2 {
-        font-size: 14px;
-        font-weight: bold;
-    }
 
-    .jobInfo3 {
-        color: $neutral-cyan;
-        font-size: x-small;
-        
-    }
-}
 
-.jobFilter {
-    grid-area: filter;
-    display: flex;
-    flex-wrap: wrap;
-    justify-self: flex-end; 
-    button {
-        @include button;
-        &:hover {
-            background: $primary-cyan;
-            color: $neutral-filter;
-        }   
-    }
-}

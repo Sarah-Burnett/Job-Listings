@@ -6,7 +6,7 @@ function Job(props) {
     const { id, logo, position, company, new: newJob, featured, contract, location, postedAt, ...filter } = props.job
     return (
         <div className="job">
-            <Logo logo={logo} key={id}/>
+            <Logo company={company} key={id}/>
             <div className="jobInfo">
                 <div className="jobInfo1"> 
                     {company} {newJob && <span className="new">NEW!</span>} {featured && <span className="featured">FEATURED</span>}

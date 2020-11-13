@@ -1,0 +1,32 @@
+.jobInfo {
+    grid-area: info;
+    padding: 1vw;
+    .jobInfo1 {
+        color: $primary-cyan;
+        font-weight: bold;
+        font-size: small;
+        .new {
+            background: $primary-cyan;
+            color: white;
+            border-radius: 15px;
+            padding: 4px 8px;
+            font-size: x-small;
+        }
+        
+        .featured {
+            @extend .new;
+            background: $neutral-dkcyan;
+        }
+    }
+
+    .jobInfo2 {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .jobInfo3 {
+        color: $neutral-cyan;
+        font-size: x-small;
+        
+    }
+}
